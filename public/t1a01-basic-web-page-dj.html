@@ -1,44 +1,53 @@
-<h5>Version 0.0.2</h5>
+<html>
+<head>
+<title> Basic web stuff</title>
+</head>
+<body>
+<h5>Version 0.0.1</h5>
 
-<h1 align=center>T1A02-Lists-and-tables-by-Fred</h1>
+<h1 align=center>T3A01-Web-Basics-by-Fred.html </h1>
 
-<h2> Lists</h2>
+<a href="http://www.google.ca">Link to Google</a><br>
+Plain Text <b> Bold </b> and <i> Italic </i> can you put them together<br>
+<hr>
+This is an image <br>
+<img width=200 src="http://hairlesscatblog.com/wp-content/uploads/2014/02/types-of-hairless-cats.jpg"><br><br>
 
-<ol> Ordered list of fav foods (at least 5)
-  <li>Kd
-  <li>Steak
-</ol>
+Youtube Embedded video <br>
+<iframe width="300" height="200" src="https://www.youtube.com/watch?v=2yYJMB9mxT4&t=1776s" frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<hr>
+<div>This is a </div>
+<div>div</div>
 
-<ul> Unordered list of Countries (at least 5)
-  <li>Canada
-  <li>France
-</ul>
+<span>This is </span>
+<span> a span</span>
 
-<b>Assignment</b>. You make a list inside a list of 
-multiple items<br>
-
-<h2> Tables</h2>
-
-<table border=1>
-<tr><td>A</td><td>B</td></tr>
-<tr><td>1</td><td>2</td></tr>
-</table><br>
+<h3> Write about Ellis' 10 main areas of coding</h3>
 
 
-<b>Assignment</b> Make a 3 x 4 table,
- then make a link and image table with border = 0<br><br><br>
-
-<h2>Advanced</h2>
-
-Load an image and get it to move 10 pixels to the left using the button below<br>
-
-<image id="myImage01" src="" style="position:relative; left:0; top:0; width:50; height:50; "><br>
-
-<input type=button value="Go left" onclick="{
-   document.getElementById('myImage01').style.left = '200px'
-   document.getElementById('myDiv01').innerHTML = 'It went left'
+<input type=button value="0. Pseudo Code" onclick="{
+   document.getElementById('myDiv01').innerHTML = 'Hello don\'t World'
 }">
 
+<input type=button value="1. Input/Output" onclick="{
+   document.getElementById('myDiv01').innerHTML = 'Input adffgdsfsgsdfdfg<br>'
+   +'sdfg<br>sdfg<br>output is...'
+}">
 
+<input type=button value="4. Decisions" onclick="{
+   document.getElementById('myDiv01').innerHTML = `
+  Decisions use the if statement to make true 
+  false variable decisions<br>
+<pre>
+if (hour < 18) {
+  greeting = \'Good day\';
+}
+</pre>
+
+`}"><br>
+You do: 2:variables, 3:loops, 5:functions, 6:events, 7:arrays, 8:objects, 9:classes<br>
 
 <div id="myDiv01">...</div>
+<body>
+</html>
