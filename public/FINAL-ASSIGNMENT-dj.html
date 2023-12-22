@@ -1,0 +1,66 @@
+import pygame
+import sys
+import random
+
+# Initialize Pygame
+pygame.init()
+
+# Constants
+WIDTH, HEIGHT = 600, 400
+WHITE = (255, 255, 255)
+RED = (255, 0, 0)
+CUP_RADIUS = 20
+
+# Game variables
+cup_x = WIDTH // 2
+cup_y = HEIGHT - 50
+ball_radius = 10
+ball_speed = 5
+ball_x, ball_y = WIDTH // 2, HEIGHT // 2
+
+# Initialize the screen
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Cup Pong")
+
+def draw_cup(x, y):
+    pygame.draw.circle(screen, RED, (x, y), CUP_RADIUS)
+
+def draw_ball(x, y):
+    pygame.draw.circle(screen, WHITE, (x, y), ball_radius)
+
+def main():
+    global cup_x, ball_x, ball_y
+
+    clock = pygame.time.Clock()
+
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_LEFT] and cup_x > 0:
+            cup_x -= 5
+        if keys[pygame.K_RIGHT] and cup_x < WIDTH:
+            cup_x += 5
+
+        ball_y -= ball_speed
+
+        # Check if the ball hits the cup
+        distance = ((cup_x - ball_x) ** 2 + (cup_y - ball_y) ** 2) ** 0.5
+        if distance < CUP_RADIUS + ball_radius:
+            # Respawn the ball
+            ball_x = random.randint(ball_radius, WIDTH - ball_radius)
+            ball_y = HEIGHT - ball_radius
+
+        # Draw everything
+        screen.fill((0, 0, 0))
+        draw_cup(cup_x, cup_y)
+        draw_ball(ball_x, ball_y)
+
+        pygame.display.flip()
+        clock.tick(60)
+
+if __name__ == "__main__":
+    main()
